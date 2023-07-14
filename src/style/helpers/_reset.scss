@@ -1,0 +1,19 @@
+body {
+    @apply relative overflow-x-hidden;
+
+    &:after, &:before {
+        @apply
+        transition-all ease-in-out duration-700;
+    }
+}
+
+[id*="-page"] {
+    @apply overflow-x-hidden;
+}
+
+input {
+    &:focus {
+        @apply
+        [outline:none];
+    }
+}

@@ -1,0 +1,28 @@
+//Import your all fonts like example down below. No need to touch the path.
+@include font-face("WorkSans", WorkSans-Thin, 200, normal);
+@include font-face("WorkSans", WorkSans-ThinItalic, 200, italic);
+@include font-face("WorkSans", WorkSans-Light, 300, normal);
+@include font-face("WorkSans", WorkSans-LightItalic, 300, italic);
+@include font-face("WorkSans", WorkSans-Regular, 400, normal);
+@include font-face("WorkSans", WorkSans-Italic, 400, italic);
+@include font-face("WorkSans", WorkSans-Medium, 500, normal);
+@include font-face("WorkSans", WorkSans-MediumItalic, 500, italic);
+@include font-face("WorkSans", WorkSans-SemiBold, 600, normal);
+@include font-face("WorkSans", WorkSans-SemiBoldItalic, 600, italic);
+@include font-face("WorkSans", WorkSans-Bold, 700, normal);
+@include font-face("WorkSans", WorkSans-BoldItalic, 700, italic);
+@include font-face("WorkSans", WorkSans-ExtraBold, 800, normal);
+@include font-face("WorkSans", WorkSans-ExtraBoldItalic, 800, italic);
+@include font-face("WorkSans", WorkSans-Black, 900, normal);
+@include font-face("WorkSans", WorkSans-BlackItalic, 900, italic);
+
+//font awesome
+@import "src/style/config/all.css";
+
+//Your main font properties. You are free to change according to your project.
+* {
+  @apply
+  font-["WorkSans",sans-serif]
+  font-normal
+  text-[16px];
+}

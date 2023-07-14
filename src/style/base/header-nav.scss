@@ -1,0 +1,86 @@
+.header-nav {
+    @apply
+    flex lg:hidden justify-center items-center
+    w-full;
+
+    nav {
+        @apply
+        w-full h-full z-2;
+
+        > ul {
+            @apply
+            flex justify-between
+            relative
+            w-full h-full;
+
+            > .menu-item {
+                @apply
+                h-full
+                transition-transform ease-in-out duration-700;
+
+                > a {
+                    @apply
+                    inline-flex items-center
+                    h-full px-[7px]
+                    text-text uppercase
+                    transition-all ease-in-out duration-700;
+
+                    &:hover {
+                        @apply text-primary;
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        @apply pl-0;
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        @apply pr-0 text-[#FF7777];
+                    }
+                }
+
+                .sub-menu {
+                    @apply
+                    w-[1170px]
+                    absolute left-0
+                    opacity-0
+                    px-[15px]
+                    flex
+                    pointer-events-none
+                    transition-all ease-in-out duration-700;
+
+                    li {
+                        a {
+                            @apply
+                            inline-flex items-center
+                            py-[15px];
+                        }
+                    }
+
+                    .sub-menu-block {
+                        @apply
+                        w-full;
+
+                        p {
+                            @apply
+                            text-[24px] font-medium;
+                        }
+                    }
+                }
+
+                &:hover {
+                    > .sub-menu {
+                        @apply
+                        h-max
+                        opacity-100
+                        pointer-events-auto
+                        transition-all ease-in-out duration-700;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,263 @@
+.sidenav {
+    @apply
+    hidden xl:block
+    fixed right-0 top-0 pt-[26px]
+    translate-x-[280px] overflow-y-auto
+    w-[280px] h-screen
+    bg-white
+    transition-all ease-in-out duration-700;
+
+    .sidenav-wrapper {
+
+        .close-button {
+            @apply
+            flex items-center justify-center
+            w-[30px] h-[30px]
+            float-right
+            cursor-pointer
+            relative
+            mb-[12px] mr-[24px];
+
+            span {
+                @apply
+                absolute
+                w-[17px] h-[2px]
+                rounded-[6px]
+                block bg-dark;
+
+                &:nth-child(1) {
+                    @apply
+                    rotate-45;
+                }
+
+                &:nth-child(2) {
+                    @apply
+                    -rotate-45;
+                }
+            }
+        }
+
+        .search {
+            @apply
+            pb-[16px] mb-[16px] px-[24px]
+            border-b border-text/[.12]
+            clear-both;
+
+            form {
+                .form-element {
+                    @apply
+                    flex items-center gap-[12px];
+
+                    input {
+                        @apply
+                        p-[9px_20px_10px_20px]
+                        w-full
+                        border border-light rounded-full
+                        text-[14px] leading-[14px] text-text
+                        transition-all ease-in-out duration-300;
+
+                        &::placeholder {
+                            @apply text-light;
+                        }
+
+                        &:focus {
+                            @apply
+                            border-black
+                            transition-all ease-in-out duration-300;
+                        }
+                    }
+
+                    button {
+                        @apply
+                        flex items-center justify-center
+                        border border-light rounded-full
+                        h-[38px] w-[51px];
+
+                        i {
+                            @apply
+                            text-[20px] text-text
+                            transition-all ease-in-out duration-300;
+                        }
+
+                        &:hover {
+                            i {
+                                @apply
+                                text-primary
+                                transition-all ease-in-out duration-300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        nav {
+            @apply
+            w-full px-[24px];
+
+            > ul {
+                > .menu-item {
+                    @apply
+                    block cursor-pointer;
+
+                    > a {
+                        @apply
+                        inline-block
+                        text-[16px] text-dark uppercase
+                        py-[8px];
+                    }
+
+                    &:last-child {
+                        a {
+                            @apply text-[#FF7777];
+                        }
+                    }
+
+                    > .sub-menu {
+                        @apply
+                        opacity-0
+                        h-0
+                        pointer-events-none
+                        pl-[10px]
+                        transition-all ease-in-out duration-300;
+
+                        .sub-menu-block {
+                            p {
+                                @apply text-[18px] font-medium;
+                            }
+
+                            &:not(&:last-child) {
+                                @apply mb-[10px];
+                            }
+                        }
+
+                        &.sub-menu-open {
+                            @apply
+                            opacity-100
+                            h-full
+                            pointer-events-auto
+                            transition-all ease-in-out duration-300;
+                        }
+
+                        .menu-item {
+                            @apply
+                            block;
+
+                            a {
+                                @apply
+                                inline-block
+                                text-[16px] text-dark uppercase
+                                py-[8px];
+                            }
+                        }
+                    }
+
+                    &.has-sub-menu {
+                        @apply
+                        relative;
+
+                        i {
+                            @apply
+                            absolute right-0 top-[10px]
+                            text-dark text-[16px]
+                            transition-all ease-in-out duration-300;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom-area {
+            @apply
+            pt-[16px] mt-[16px] px-[24px]
+            border-t border-text/[.12];
+
+            .help-block {
+                @apply
+                flex items-center justify-between gap-[10px] h-full;
+
+                a {
+                    @apply
+                    text-[15px] leading-[25px]
+                    text-text
+                    transition-all ease-in-out duration-300;
+
+                    &:hover {
+                        @apply
+                        text-primary;
+                    }
+                }
+
+                .language-switcher {
+                    @apply
+                    border border-black rounded-full cursor-pointer relative
+                    transition-all ease-in-out duration-300;
+
+                    div {
+                        @apply
+                        flex items-center gap-[8px]
+                        p-[3px_10px_3px_2px];
+                    }
+
+                    img {
+                        @apply
+                        w-[20px] h-[20px]
+                        object-cover
+                        rounded-full;
+                    }
+
+                    ul {
+                        @apply
+                        absolute bottom-[36px] -left-[1px] z-50
+                        w-[calc(100%+2px)] bg-white
+                        flex flex-col
+                        rounded-xl border border-black
+                        overflow-hidden
+                        transition-all ease-in-out duration-300
+                        opacity-0 pointer-events-none;
+
+                        li {
+                            @apply
+                            p-[10px_4px]
+                            transition-all ease-in-out duration-300;
+
+                            &:hover {
+                                @apply
+                                bg-light;
+                            }
+                        }
+                    }
+
+                    &.switch-open {
+
+                        ul {
+                            @apply
+                            opacity-100 pointer-events-auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        @apply
+        translate-x-0 border-l border-light;
+
+        ~ * {
+            @apply
+            translate-x-[-280px];
+        }
+    }
+
+    ~ * {
+        @apply
+        transition-all ease-in-out duration-700;
+    }
+}
+
+html.sticky-active {
+    .sidenav {
+        @apply pt-[17px];
+    }
+}

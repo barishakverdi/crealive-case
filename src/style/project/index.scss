@@ -1,0 +1,126 @@
+#index-page {
+    .content-container {
+        @apply
+        max-w-[1170px] w-full mx-auto;
+    }
+
+    .breadcrumb-section {
+        @apply mt-[calc(166px+25px)]; //166 is header height. 25 is margin-top value of design
+
+        @media (max-width: 1200px) {
+            @apply
+            mt-[calc(66px+25px)]; //66 is header height. 25 is margin value of design
+        }
+
+        .breadcrumb {
+            ul {
+                @apply flex;
+
+                li {
+                    @apply relative;
+
+                    a {
+                        @apply
+                        text-[16px] leading-[25px] text-helper uppercase
+                        transition-all ease-in-out duration-300;
+
+                        &:hover {
+                            @apply text-text;
+                        }
+                    }
+
+                    + li {
+                        &:before {
+                            @apply
+                            content-["/"]
+                            text-helper
+                            pl-[6px];
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .description-area {
+        .description {
+            p {
+                @apply
+                text-[16px] leading-[25px] text-text;
+            }
+        }
+
+        .image {
+            @apply w-full;
+
+            img {
+                @apply
+                w-full
+                [border-width:0.5px] border-black/[.12] rounded-[8px];
+            }
+        }
+    }
+
+    .fixed-bar {
+        @apply
+        bg-primary py-[8px] w-full fixed bottom-[-120px]
+        transition-all ease-in-out duration-300;
+
+        p, span {
+            @apply text-white;
+        }
+
+        .left {
+            p {
+                @apply
+                text-[24px] leading-[28px] font-medium;
+            }
+        }
+
+        .right {
+            span {
+                @apply
+                text-[16px] leading-[25px] text-[#F5FAFE];
+            }
+
+            .content {
+                @apply flex items-center justify-end gap-[24px];
+
+                p {
+                    @apply
+                    text-[24px] leading-[28px] font-medium;
+
+                    &:first-child {
+                        @apply
+                        line-through text-[#F5FAFE] font-light;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            @apply
+            px-5;
+
+            .row {
+                @apply flex-col items-start gap-[10px];
+            }
+
+            .left {
+                p {
+                    @apply text-[18px] leading-[21px];
+                }
+            }
+
+            .right {
+                .content {
+                    @apply justify-start;
+
+                    p {
+                        @apply text-[18px] leading-[21px];
+                    }
+                }
+            }
+        }
+    }
+}

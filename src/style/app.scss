@@ -1,0 +1,12 @@
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Tailwind */
+
+@import "base/_base";
+@import "helpers/_mixins";
+@import "helpers/_variables";
+@import "helpers/_reset";
+@import "project/_project";
+@import "config/fonts";
